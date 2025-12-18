@@ -1,0 +1,47 @@
+openapi: 3.0.3
+info:
+  title: AI Learning Backend API
+  description: API documentation for the AiLearning project
+  version: 1.0.0
+  contact:
+    name: Your Name
+    email: you@example.com
+
+servers:
+  - url: http://localhost:5000
+    description: Local development server
+
+paths:
+  /:
+    get:
+      summary: Root endpoint
+      description: Returns a welcome message
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Welcome to AI Learning API!"
+
+  /api-docs:
+    get:
+      summary: Swagger UI
+      description: Redirects to Swagger documentation
+      responses:
+        '200':
+          description: Swagger UI page (auto-handled by swagger-ui-express)
+
+# Optional: Define reusable components (like schemas, errors, etc.)
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          example: "Something went wrong"
